@@ -234,6 +234,50 @@
       color: #bf5af2;
       line-height: 1.6;
     }
+
+    .social-banner {
+  padding: 5rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.social-content {
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    rgba(255,43,214,.12),
+    rgba(157,77,255,.12)
+  );
+  border: 1px solid rgba(255,43,214,.25);
+  border-radius: 18px;
+  padding: 3rem;
+}
+
+.social-content p {
+  color: var(--muted);
+  max-width: 650px;
+  margin: 0 auto 2rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.social-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: .9rem 1.4rem;
+  border-radius: 10px;
+  transition: .3s;
+}
+
+.social-btn:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 0 15px rgba(255,43,214,.2);
+}
   </style>
 </head>
 <body>
@@ -558,6 +602,50 @@
     </div>
   </footer>
 
+
+<section class="social-banner">
+  <div class="container">
+    <div class="social-content">
+      <p class="section-tag">// Síguenos</p>
+      <h2>Conéctate con TechStore</h2>
+      <p>
+        Mantente al día con promociones, nuevos productos y noticias
+        tecnológicas siguiéndonos en nuestras redes sociales.
+      </p>
+
+      <div class="social-links">
+        <a href="#" class="social-btn">📸 Instagram</a>
+        <a href="#" class="social-btn">🎵 TikTok</a>
+        <a href="#" class="social-btn">📘 Facebook</a>
+        <a href="#" class="social-btn">💬 WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+
+    function handleSubmit(e) {
+
+      e.preventDefault();
+
+      document.getElementById('success-msg').style.display = 'block';
+
+      e.target.reset();
+
+    }
+
+    function toggleFaq(btn) {
+
+      const item = btn.closest('.faq-item');
+
+      item.classList.toggle('open');
+
+    }
+
+  </script>
 
 </body>
 </html>
