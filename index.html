@@ -3,24 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PixelByte Store — Tecnología para todos</title>
+  <title>TechStore Medellín — Tecnología para todos</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
-  <!-- COMMIT 3: Estilos para la nueva sección de testimonios -->
   <style>
+    /* ===== PALETA CYBER PINK + LILA ===== */
+    :root {
+      --pink:      #ff2d78;
+      --pink-soft: #ff6ea8;
+      --lila:      #bf5af2;
+      --lila-dark: #7b2fff;
+      --bg:        #0a0a0f;
+      --surface:   #12121a;
+      --border:    #1e1e2e;
+      --text:      #f0ecff;
+      --muted:     #8a82a8;
+    }
+
     /* ===== SECCIÓN TESTIMONIOS ===== */
     .testimonials {
       padding: 80px 0;
-      background-color: #0d0d0d;
+      background-color: var(--bg);
     }
 
     .testimonials .section-tag {
-      color: #7c3aed;
+      color: var(--pink);
       font-family: 'Inter', monospace;
       font-size: 0.8rem;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       margin-bottom: 0.5rem;
     }
@@ -29,7 +41,7 @@
       font-family: 'Syne', sans-serif;
       font-size: clamp(1.8rem, 3vw, 2.4rem);
       font-weight: 800;
-      color: #f5f5f5;
+      color: var(--text);
       margin-bottom: 3rem;
     }
 
@@ -40,19 +52,20 @@
     }
 
     .testimonial-card {
-      background: #161616;
-      border: 1px solid #2a2a2a;
+      background: var(--surface);
+      border: 1px solid var(--border);
       border-radius: 16px;
       padding: 2rem;
       display: flex;
       flex-direction: column;
       gap: 1rem;
-      transition: border-color 0.25s ease, transform 0.25s ease;
+      transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
     }
 
     .testimonial-card:hover {
-      border-color: #7c3aed;
+      border-color: var(--pink);
       transform: translateY(-4px);
+      box-shadow: 0 0 24px rgba(255, 45, 120, 0.18);
     }
 
     .testimonial-stars {
@@ -61,20 +74,15 @@
       font-size: 1.1rem;
     }
 
-    .testimonial-stars .star {
-      color: #facc15; /* amarillo cálido */
-    }
-
-    .testimonial-stars .star.empty {
-      color: #3a3a3a;
-    }
+    .testimonial-stars .star       { color: var(--pink); }
+    .testimonial-stars .star.empty { color: #2a2a3a; }
 
     .testimonial-text {
       font-family: 'Inter', sans-serif;
       font-size: 0.95rem;
       font-weight: 300;
-      color: #c0c0c0;
-      line-height: 1.7;
+      color: var(--muted);
+      line-height: 1.75;
       flex: 1;
     }
 
@@ -82,7 +90,7 @@
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      border-top: 1px solid #2a2a2a;
+      border-top: 1px solid var(--border);
       padding-top: 1rem;
     }
 
@@ -90,7 +98,7 @@
       width: 42px;
       height: 42px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #7c3aed, #4f46e5);
+      background: linear-gradient(135deg, var(--pink), var(--lila));
       display: flex;
       align-items: center;
       justify-content: center;
@@ -98,41 +106,36 @@
       flex-shrink: 0;
     }
 
-    .author-info {
-      display: flex;
-      flex-direction: column;
-    }
-
     .author-name {
       font-family: 'Syne', sans-serif;
       font-size: 0.9rem;
       font-weight: 700;
-      color: #f5f5f5;
+      color: var(--text);
     }
 
     .author-role {
       font-family: 'Inter', sans-serif;
       font-size: 0.78rem;
-      color: #666;
+      color: var(--muted);
     }
 
     .testimonial-tag {
       display: inline-block;
       align-self: flex-start;
-      background: #1e1e2e;
-      color: #7c3aed;
+      background: #1a0d2e;
+      color: var(--lila);
       font-family: 'Inter', monospace;
       font-size: 0.72rem;
       padding: 3px 10px;
       border-radius: 999px;
-      border: 1px solid #2d2d4e;
+      border: 1px solid #2d1a4e;
     }
   </style>
 </head>
 <body>
 
   <nav class="navbar">
-    <a href="index.html" class="nav-logo">PIXEL<span>BYTE</span></a>
+    <a href="index.html" class="nav-logo">TECH<span>STORE</span></a>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Inicio</a></li>
       <li><a href="productos.html">Productos</a></li>
@@ -152,8 +155,8 @@
         de lo que creés.
       </h1>
       <p class="hero-desc">
-        Somos Mariana, Eliannis y Jahela — tres aprendices del SENA apasionados por
-        la tecnología. Creamos PixelByte Store para que estudiantes y desarrolladores
+        Somos Mariana, Jahela y Eliannis — tres aprendices del SENA apasionadas por
+        la tecnología. Creamos TechStore para que estudiantes y desarrolladores
         de Medellín accedan a los mejores equipos sin salir del barrio.
         Envío a todo Colombia, asesoría personalizada y precios honestos.
       </p>
@@ -180,36 +183,12 @@
       <p class="section-tag">// Categorías</p>
       <h2 class="section-title">Encontrá lo que buscás</h2>
       <div class="cat-grid">
-        <a href="productos.html" class="cat-card">
-          <span class="cat-icon">💻</span>
-          <h3>Laptops</h3>
-          <p>Para trabajo y estudio</p>
-        </a>
-        <a href="productos.html" class="cat-card">
-          <span class="cat-icon">🖥️</span>
-          <h3>Monitores</h3>
-          <p>Alta resolución</p>
-        </a>
-        <a href="productos.html" class="cat-card">
-          <span class="cat-icon">⌨️</span>
-          <h3>Periféricos</h3>
-          <p>Teclados y mouse</p>
-        </a>
-        <a href="productos.html" class="cat-card">
-          <span class="cat-icon">📱</span>
-          <h3>Móviles</h3>
-          <p>Smartphones y tablets</p>
-        </a>
-        <a href="productos.html" class="cat-card">
-          <span class="cat-icon">🎧</span>
-          <h3>Audio</h3>
-          <p>Audífonos y parlantes</p>
-        </a>
-        <a href="productos.html" class="cat-card">
-          <span class="cat-icon">🔌</span>
-          <h3>Accesorios</h3>
-          <p>Cables y adaptadores</p>
-        </a>
+        <a href="productos.html" class="cat-card"><span class="cat-icon">💻</span><h3>Laptops</h3><p>Para trabajo y estudio</p></a>
+        <a href="productos.html" class="cat-card"><span class="cat-icon">🖥️</span><h3>Monitores</h3><p>Alta resolución</p></a>
+        <a href="productos.html" class="cat-card"><span class="cat-icon">⌨️</span><h3>Periféricos</h3><p>Teclados y mouse</p></a>
+        <a href="productos.html" class="cat-card"><span class="cat-icon">📱</span><h3>Móviles</h3><p>Smartphones y tablets</p></a>
+        <a href="productos.html" class="cat-card"><span class="cat-icon">🎧</span><h3>Audio</h3><p>Audífonos y parlantes</p></a>
+        <a href="productos.html" class="cat-card"><span class="cat-icon">🔌</span><h3>Accesorios</h3><p>Cables y adaptadores</p></a>
       </div>
     </div>
   </section>
@@ -225,82 +204,46 @@
           <span class="product-badge">Nuevo</span>
           <div class="product-img">💻</div>
           <h3>MacBook Air M2</h3>
-          <p class="product-desc">
-            Chip Apple M2, 8 GB RAM, 256 GB SSD. Pantalla Liquid Retina 13.6".
-            Duración de batería de hasta 18 horas. Ideal para estudiantes y creadores.
-          </p>
-          <div class="product-footer">
-            <span class="product-price">$9.800.000</span>
-            <a href="productos.html" class="btn-small">Ver</a>
-          </div>
+          <p class="product-desc">Chip Apple M2, 8 GB RAM, 256 GB SSD. Pantalla Liquid Retina 13.6". Batería 18 h.</p>
+          <div class="product-footer"><span class="product-price">$9.800.000</span><a href="productos.html" class="btn-small">Ver</a></div>
         </div>
 
         <div class="product-card">
           <span class="product-badge oferta">Oferta</span>
           <div class="product-img">🖥️</div>
           <h3>Monitor LG 27" 4K UltraFine</h3>
-          <p class="product-desc">
-            Resolución 3840×2160, panel IPS con cobertura 99% sRGB.
-            USB-C con carga de 96 W. Compatible con Mac y PC. Perfecto para diseño.
-          </p>
-          <div class="product-footer">
-            <span class="product-price">$2.200.000</span>
-            <a href="productos.html" class="btn-small">Ver</a>
-          </div>
+          <p class="product-desc">Panel IPS 3840×2160, 99% sRGB, USB-C 96 W. Perfecto para diseño y código.</p>
+          <div class="product-footer"><span class="product-price">$2.200.000</span><a href="productos.html" class="btn-small">Ver</a></div>
         </div>
 
         <div class="product-card">
           <div class="product-img">⌨️</div>
           <h3>Teclado Mecánico Keychron K2 V2</h3>
-          <p class="product-desc">
-            Switch Gateron G Pro Red, layout 75%, retroiluminación RGB.
-            Compatible con Mac y Windows via Bluetooth o USB-C. El favorito dev.
-          </p>
-          <div class="product-footer">
-            <span class="product-price">$450.000</span>
-            <a href="productos.html" class="btn-small">Ver</a>
-          </div>
+          <p class="product-desc">Switch Gateron Red, layout 75%, RGB. Bluetooth o USB-C. El favorito de los devs.</p>
+          <div class="product-footer"><span class="product-price">$450.000</span><a href="productos.html" class="btn-small">Ver</a></div>
         </div>
 
         <div class="product-card">
           <span class="product-badge">Popular</span>
           <div class="product-img">🎧</div>
           <h3>Sony WH-1000XM5</h3>
-          <p class="product-desc">
-            Cancelación de ruido líder del mercado, 30 horas de batería,
-            audio Hi-Res y micrófono con IA para llamadas cristalinas.
-          </p>
-          <div class="product-footer">
-            <span class="product-price">$1.350.000</span>
-            <a href="productos.html" class="btn-small">Ver</a>
-          </div>
+          <p class="product-desc">Cancelación de ruido líder, 30 h batería, audio Hi-Res y micrófono con IA.</p>
+          <div class="product-footer"><span class="product-price">$1.350.000</span><a href="productos.html" class="btn-small">Ver</a></div>
         </div>
 
         <div class="product-card">
           <div class="product-img">📱</div>
           <h3>Samsung Galaxy Tab S9 FE</h3>
-          <p class="product-desc">
-            Pantalla TFT 10.9", procesador Exynos 1380, 6 GB RAM, 128 GB.
-            Incluye S Pen. Resistencia al agua IP68. Ideal para tomar notas en clase.
-          </p>
-          <div class="product-footer">
-            <span class="product-price">$1.890.000</span>
-            <a href="productos.html" class="btn-small">Ver</a>
-          </div>
+          <p class="product-desc">Pantalla 10.9", Exynos 1380, 6 GB RAM, S Pen incluido, IP68. Ideal para el SENA.</p>
+          <div class="product-footer"><span class="product-price">$1.890.000</span><a href="productos.html" class="btn-small">Ver</a></div>
         </div>
 
         <div class="product-card">
           <span class="product-badge oferta">Oferta</span>
           <div class="product-img">🖱️</div>
           <h3>Logitech MX Master 3S</h3>
-          <p class="product-desc">
-            Sensor 8000 DPI, scroll magnético ultrasilencioso, batería de 70 días.
-            Conexión USB-C y Bluetooth. Compatible con Mac, Windows y Linux.
-          </p>
-          <div class="product-footer">
-            <span class="product-price">$380.000</span>
-            <a href="productos.html" class="btn-small">Ver</a>
-          </div>
+          <p class="product-desc">Sensor 8000 DPI, scroll magnético, 70 días de batería. USB-C y Bluetooth.</p>
+          <div class="product-footer"><span class="product-price">$380.000</span><a href="productos.html" class="btn-small">Ver</a></div>
         </div>
 
       </div>
@@ -324,16 +267,13 @@
         <article class="testimonial-card">
           <span class="testimonial-tag">Laptop</span>
           <div class="testimonial-stars">
-            <span class="star">★</span>
-            <span class="star">★</span>
-            <span class="star">★</span>
-            <span class="star">★</span>
-            <span class="star">★</span>
+            <span class="star">★</span><span class="star">★</span>
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span>
           </div>
           <p class="testimonial-text">
-            "Compré la MacBook Air M2 y el proceso fue rapidísimo. Me la entregaron
-            en dos días a Bello, bien empacada y con garantía. Juan me asesoró
-            sobre qué modelo convenía para desarrollo web — muy profesional y atento."
+            "Compré la MacBook Air M2 y llegó en dos días a Bello, perfectamente empacada.
+            Mariana me asesoró por WhatsApp sobre qué modelo era mejor para desarrollo web.
+            Atención increíble, definitivamente vuelvo."
           </p>
           <div class="testimonial-author">
             <div class="author-avatar">👨🏽‍💻</div>
@@ -348,16 +288,13 @@
         <article class="testimonial-card">
           <span class="testimonial-tag">Periféricos</span>
           <div class="testimonial-stars">
-            <span class="star">★</span>
-            <span class="star">★</span>
-            <span class="star">★</span>
-            <span class="star">★</span>
-            <span class="star">★</span>
+            <span class="star">★</span><span class="star">★</span>
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span>
           </div>
           <p class="testimonial-text">
-            "El teclado Keychron llegó perfecto y el descuento SENA fue real, no letra
-            pequeña. Valeria me explicó las diferencias entre switches por WhatsApp
-            antes de comprar. No conocía otra tienda con ese nivel de servicio acá en Medellín."
+            "El descuento SENA fue real, no letra pequeña. Jahela me explicó las diferencias
+            entre switches antes de comprar. El Keychron llegó perfecto y no conocía
+            otra tienda con ese nivel de servicio en Medellín."
           </p>
           <div class="testimonial-author">
             <div class="author-avatar">👩🏽‍🎓</div>
@@ -372,16 +309,14 @@
         <article class="testimonial-card">
           <span class="testimonial-tag">Monitor</span>
           <div class="testimonial-stars">
-            <span class="star">★</span>
-            <span class="star">★</span>
-            <span class="star">★</span>
-            <span class="star">★</span>
+            <span class="star">★</span><span class="star">★</span>
+            <span class="star">★</span><span class="star">★</span>
             <span class="star empty">★</span>
           </div>
           <p class="testimonial-text">
-            "El monitor LG 4K llegó sin rayones y el precio fue mejor que en el centro.
+            "El monitor LG 4K llegó sin rayones y más barato que en el centro.
             Le bajo una estrella porque el envío tardó un día extra, pero el producto
-            es increíble para edición de video. Lo recomiendo sin dudarlo."
+            es una maravilla para editar video. Lo recomiendo."
           </p>
           <div class="testimonial-author">
             <div class="author-avatar">🎬</div>
@@ -396,16 +331,13 @@
         <article class="testimonial-card">
           <span class="testimonial-tag">Audio</span>
           <div class="testimonial-stars">
-            <span class="star">★</span>
-            <span class="star">★</span>
-            <span class="star">★</span>
-            <span class="star">★</span>
-            <span class="star">★</span>
+            <span class="star">★</span><span class="star">★</span>
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span>
           </div>
           <p class="testimonial-text">
-            "Los Sony XM5 me cambiaron la vida para estudiar en casa con niños.
-            Sebastián me confirmó por chat que había stock antes de pagar. Atención
-            100% humana, sin bots. Volveré a comprar el mouse en diciembre."
+            "Los Sony XM5 me salvaron para estudiar en casa. Eliannis me confirmó
+            el stock antes de pagar y el envío llegó antes de lo prometido.
+            Atención 100% humana, sin bots. Ya encargué el mouse."
           </p>
           <div class="testimonial-author">
             <div class="author-avatar">👩🏻‍🏫</div>
@@ -419,9 +351,7 @@
       </div>
     </div>
   </section>
-  <!-- ===================================================== -->
-  <!-- FIN SECCIÓN TESTIMONIOS                               -->
-  <!-- ===================================================== -->
+  <!-- FIN SECCIÓN TESTIMONIOS -->
 
   <!-- BANNER -->
   <section class="banner">
@@ -437,7 +367,7 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <a href="index.html" class="nav-logo">PIXEL<span>BYTE</span></a>
+        <a href="index.html" class="nav-logo">TECH<span>STORE</span></a>
         <p class="footer-desc">Tecnología para todos en Medellín, Colombia.</p>
       </div>
       <div>
@@ -452,13 +382,13 @@
         <p class="footer-title">Contacto</p>
         <ul>
           <li>Medellín, Colombia</li>
-          <li>pixelbyte@email.com</li>
-          <li>+57 301 234 5678</li>
+          <li>techstore@email.com</li>
+          <li>+57 300 000 0000</li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 PixelByte Store Medellín · Construido con HTML, CSS y GitHub Pages</p>
+      <p>© 2026 TechStore Medellín · Construido con HTML, CSS y GitHub Pages</p>
     </div>
   </footer>
 
