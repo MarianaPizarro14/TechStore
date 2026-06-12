@@ -168,3 +168,10 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   opacity: .8;
 }
+
+.old-price{
+    text-decoration: line-through;
+    color: gray;
+    margin-right: 10px;
+    font-size: .9rem;
+}
