@@ -42,9 +42,7 @@
       overflow: hidden;
       transition: border-color 0.25s;
     }
-    .faq-item:hover {
-      border-color: #ff2d78;
-    }
+    .faq-item:hover { border-color: #ff2d78; }
     .faq-question {
       width: 100%;
       background: none;
@@ -69,9 +67,7 @@
       flex-shrink: 0;
       transition: transform 0.3s;
     }
-    .faq-item.open .faq-icon {
-      transform: rotate(45deg);
-    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
     .faq-answer {
       max-height: 0;
       overflow: hidden;
@@ -87,6 +83,156 @@
       font-size: 0.93rem;
       color: #8a82a8;
       line-height: 1.75;
+    }
+
+    /* ===== COMMIT 3: HORARIOS Y UBICACIÓN ===== */
+    .schedule-section {
+      padding: 80px 0;
+      background: #0a0a0f;
+    }
+    .schedule-section .section-tag {
+      color: #bf5af2;
+      font-family: 'Inter', monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .schedule-section .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 800;
+      color: #f0ecff;
+      margin-bottom: 2.5rem;
+    }
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    @media (max-width: 700px) {
+      .schedule-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Tabla de horarios */
+    .schedule-table-wrap {
+      overflow-x: auto;
+      border-radius: 12px;
+      border: 1px solid #1e1e2e;
+    }
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+    }
+    .schedule-table thead {
+      background: linear-gradient(135deg, #ff2d78, #bf5af2);
+    }
+    .schedule-table thead th {
+      padding: 0.9rem 1.2rem;
+      text-align: left;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      color: #fff;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+    }
+    .schedule-table tbody tr {
+      border-bottom: 1px solid #1e1e2e;
+      transition: background 0.2s;
+    }
+    .schedule-table tbody tr:last-child { border-bottom: none; }
+    .schedule-table tbody tr:hover { background: #12121a; }
+    .schedule-table td {
+      padding: 0.85rem 1.2rem;
+      color: #8a82a8;
+    }
+    .schedule-table td:first-child {
+      color: #f0ecff;
+      font-weight: 500;
+    }
+    .badge-open {
+      display: inline-block;
+      background: rgba(0, 200, 120, 0.12);
+      color: #00c878;
+      border: 1px solid rgba(0, 200, 120, 0.3);
+      border-radius: 999px;
+      padding: 2px 10px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .badge-closed {
+      display: inline-block;
+      background: rgba(255, 45, 120, 0.1);
+      color: #ff2d78;
+      border: 1px solid rgba(255, 45, 120, 0.25);
+      border-radius: 999px;
+      padding: 2px 10px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    /* Tarjeta de ubicación */
+    .location-card {
+      background: #12121a;
+      border: 1px solid #1e1e2e;
+      border-radius: 16px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .location-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #f0ecff;
+    }
+    .location-detail {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+    .location-detail .loc-icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .location-detail p {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: #8a82a8;
+      line-height: 1.6;
+    }
+    .location-detail p strong {
+      color: #f0ecff;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .map-placeholder {
+      background: #0d0d14;
+      border: 1px dashed #2a2a3a;
+      border-radius: 10px;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #3a3a4a;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+    }
+    .schedule-note {
+      margin-top: 1rem;
+      padding: 0.9rem 1.2rem;
+      background: rgba(191, 90, 242, 0.08);
+      border: 1px solid rgba(191, 90, 242, 0.2);
+      border-radius: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      color: #bf5af2;
+      line-height: 1.6;
     }
   </style>
 </head>
@@ -212,12 +358,11 @@
     </div>
   </section>
 
-  <!-- COMMIT 2: SECCIÓN PREGUNTAS FRECUENTES -->
+  <!-- FAQ -->
   <section class="faq-section">
     <div class="container">
       <p class="section-tag">// Soporte</p>
       <h2 class="section-title">Preguntas frecuentes</h2>
-
       <div class="faq-list">
 
         <div class="faq-item">
@@ -285,7 +430,106 @@
       </div>
     </div>
   </section>
-  <!-- FIN FAQ -->
+
+  <!-- ============================================================ -->
+  <!-- COMMIT 3: SECCIÓN NUEVA — Horarios y Ubicación              -->
+  <!-- ============================================================ -->
+  <section class="schedule-section">
+    <div class="container">
+      <p class="section-tag">// Horarios y ubicación</p>
+      <h2 class="section-title">¿Cuándo y dónde encontrarnos?</h2>
+
+      <div class="schedule-grid">
+
+        <!-- TABLA DE HORARIOS -->
+        <div>
+          <div class="schedule-table-wrap">
+            <table class="schedule-table">
+              <thead>
+                <tr>
+                  <th>Día</th>
+                  <th>Horario</th>
+                  <th>Estado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Lunes</td>
+                  <td>8:00 am – 6:00 pm</td>
+                  <td><span class="badge-open">Abierto</span></td>
+                </tr>
+                <tr>
+                  <td>Martes</td>
+                  <td>8:00 am – 6:00 pm</td>
+                  <td><span class="badge-open">Abierto</span></td>
+                </tr>
+                <tr>
+                  <td>Miércoles</td>
+                  <td>8:00 am – 6:00 pm</td>
+                  <td><span class="badge-open">Abierto</span></td>
+                </tr>
+                <tr>
+                  <td>Jueves</td>
+                  <td>8:00 am – 6:00 pm</td>
+                  <td><span class="badge-open">Abierto</span></td>
+                </tr>
+                <tr>
+                  <td>Viernes</td>
+                  <td>8:00 am – 5:00 pm</td>
+                  <td><span class="badge-open">Abierto</span></td>
+                </tr>
+                <tr>
+                  <td>Sábado</td>
+                  <td>9:00 am – 1:00 pm</td>
+                  <td><span class="badge-open">Abierto</span></td>
+                </tr>
+                <tr>
+                  <td>Domingo</td>
+                  <td>—</td>
+                  <td><span class="badge-closed">Cerrado</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="schedule-note">
+            📦 Los pedidos recibidos después de las 4:00 pm se procesan el siguiente día hábil.
+            En festivos nacionales permanecemos cerrados.
+          </p>
+        </div>
+
+        <!-- UBICACIÓN -->
+        <div class="location-card">
+          <h3>📍 Punto de atención</h3>
+
+          <div class="location-detail">
+            <span class="loc-icon">🏠</span>
+            <p><strong>Dirección</strong>Calle 73 #73A-50, Barrio Laureles<br>Medellín, Antioquia, Colombia</p>
+          </div>
+
+          <div class="location-detail">
+            <span class="loc-icon">🚇</span>
+            <p><strong>Cómo llegar</strong>Metro Línea B — estación Suramericana, 8 min caminando hacia el norte por Calle 73.</p>
+          </div>
+
+          <div class="location-detail">
+            <span class="loc-icon">🚌</span>
+            <p><strong>Bus</strong>Rutas 301, 214 y 185 paran a media cuadra. Bajarse en el paradero Laureles Centro.</p>
+          </div>
+
+          <div class="location-detail">
+            <span class="loc-icon">🅿️</span>
+            <p><strong>Parqueadero</strong>Parqueadero público disponible a 50 metros. Cuota hora $3.000.</p>
+          </div>
+
+          <div class="map-placeholder">
+            🗺️ Mapa embebido — próximamente Google Maps
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- FIN HORARIOS Y UBICACIÓN -->
 
   <footer class="footer">
     <div class="container footer-grid">
