@@ -108,43 +108,43 @@ body {
 }
 
 .product-card h3 {
-
   font-size: 1.15rem;
-
   line-height: 1.4;
-
 }
-
-
 
 .product-desc {
-
   font-size: .95rem;
-
   line-height: 1.7;
-
 }
-
-
 
 .categories,
-
 .featured,
-
 .banner,
-
 .about-section,
-
 .contact-section {
-
   padding: 7rem 0;
-
 }
 
-
-
 .navbar {
-
   padding: 1.25rem 3rem;
+}
 
+.btn-primary,
+.btn-ghost,
+.btn-small {
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover,
+.btn-ghost:hover,
+.btn-small:hover {
+  transform: translateY(-4px);
+}
+
+.cat-card:hover,
+.value-card:hover,
+.team-card:hover {
+  box-shadow:
+    0 0 15px rgba(255,43,214,.15),
+    0 0 30px rgba(157,77,255,.08);
 }
