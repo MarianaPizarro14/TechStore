@@ -7,6 +7,88 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* ===== FAQ ===== */
+    .faq-section {
+      padding: 80px 0;
+      background: #0d0d14;
+    }
+    .faq-section .section-tag {
+      color: #ff2d78;
+      font-family: 'Inter', monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .faq-section .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 800;
+      color: #f0ecff;
+      margin-bottom: 2.5rem;
+    }
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 800px;
+    }
+    .faq-item {
+      background: #12121a;
+      border: 1px solid #1e1e2e;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.25s;
+    }
+    .faq-item:hover {
+      border-color: #ff2d78;
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      text-align: left;
+      gap: 1rem;
+    }
+    .faq-question span {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #f0ecff;
+    }
+    .faq-icon {
+      color: #ff2d78;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      padding: 0 1.5rem;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+      padding: 0 1.5rem 1.25rem;
+    }
+    .faq-answer p {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.93rem;
+      color: #8a82a8;
+      line-height: 1.75;
+    }
+  </style>
 </head>
 <body>
 
@@ -70,7 +152,7 @@
           </div>
         </div>
 
-        <!-- COMMIT 1: Datos de contacto reales del equipo -->
+        <!-- INFO -->
         <div>
           <p class="section-tag" style="margin-bottom:1.5rem">// Información de contacto</p>
           <div class="contact-info">
@@ -130,6 +212,81 @@
     </div>
   </section>
 
+  <!-- COMMIT 2: SECCIÓN PREGUNTAS FRECUENTES -->
+  <section class="faq-section">
+    <div class="container">
+      <p class="section-tag">// Soporte</p>
+      <h2 class="section-title">Preguntas frecuentes</h2>
+
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>¿Hacen envíos a todo Colombia?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Sí, enviamos a cualquier ciudad de Colombia a través de Coordinadora y Servientrega.
+            El tiempo de entrega es de 2 a 5 días hábiles dependiendo del municipio.
+            Los envíos a Medellín y área metropolitana llegan en 1 a 2 días hábiles.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>¿Cómo aplico el descuento del 10% como estudiante SENA?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Es muy sencillo: antes de pagar, envianos una foto de tu carné de aprendiz vigente
+            por WhatsApp. Verificamos los datos y te aplicamos el descuento directamente
+            en el valor del producto. Aplica para todos los artículos del catálogo.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>¿Qué garantía tienen los productos?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Todos nuestros productos son originales y cuentan con garantía del fabricante:
+            1 año para laptops y monitores, 6 meses para periféricos y accesorios.
+            Si el producto llega con defecto de fábrica, lo cambiamos sin costo adicional
+            dentro de los primeros 15 días.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>¿Qué métodos de pago aceptan?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Aceptamos transferencia bancaria (Bancolombia, Nequi, Daviplata),
+            pago contra entrega en Medellín y área metropolitana, y pago en efectivo
+            para recogida en punto. Próximamente habilitaremos pago con tarjeta crédito/débito.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>¿Puedo reclamar o devolver un producto?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Aceptamos devoluciones dentro de los primeros 8 días si el producto no fue usado
+            y conserva su empaque original. Para iniciar el proceso, escribinos al WhatsApp
+            con tu número de pedido y el motivo de la devolución. El reembolso se realiza
+            en máximo 5 días hábiles.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- FIN FAQ -->
+
   <footer class="footer">
     <div class="container footer-grid">
       <div>
@@ -162,6 +319,10 @@
       e.preventDefault();
       document.getElementById('success-msg').style.display = 'block';
       e.target.reset();
+    }
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      item.classList.toggle('open');
     }
   </script>
 
