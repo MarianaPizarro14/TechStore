@@ -15,12 +15,11 @@ TechStore es una tienda en línea de productos tecnológicos para desarrolladore
 
 ## 👥 Equipo
 
-<!-- CAMBIAR: Agregar los integrantes reales con sus usuarios de GitHub -->
-| Nombre | Rol | GitHub |
-|--------|-----|--------|
-| Nombre 1 | Frontend | [@usuario1](https://github.com/usuario1) |
-| Nombre 2 | Frontend | [@usuario2](https://github.com/usuario2) |
-| Nombre 3 | Frontend | [@usuario3](https://github.com/usuario3) |
+|        Nombre        |     Rol    |                              GitHub                             |
+|----------------------|------------|-----------------------------------------------------------------|
+| Mariana Pizarro      |  Frontend  |   [MarianaPizarro14](https://github.com/MarianaPizarro14)       |
+| Jahela Ariza         |  Frontend  |   [jahelaariza06-ctrl](https://github.com/jahelaariza06-ctrl)   |
+| ELiannis Hernández   |  Frontend  |   [eliannishernandez09](https://github.com/eliannishernandez09) |
 
 ## 📁 Estructura del proyecto
 
@@ -36,12 +35,11 @@ techstore/
 
 ## 🚀 Ver en vivo
 
-<!-- CAMBIAR: Agregar la URL de GitHub Pages cuando esté activa -->
-[https://TU-USUARIO.github.io/techstore](https://TU-USUARIO.github.io/techstore)
+[https://github.com/MarianaPizarro14/TechStore](https://marianapizarro14.github.io/TechStore/)
 
 ## 📌 Estado del proyecto
 
-En desarrollo · Sesiones 7 y 8 · Junio 2026
+Terminado · Sesiones 7 y 8 · Junio 2026
 
 ---
 
